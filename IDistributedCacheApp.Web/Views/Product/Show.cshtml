@@ -1,0 +1,8 @@
+@{
+    ViewData["Title"] = "Show";
+    var user = ViewBag.user as User;
+}
+<h1>Show</h1>
+<h2>@ViewBag.name</h2>
+<h2>id: @user.Id, name: @user.Name, surename:h1 @user.SureName </h2>
+<img src="@ViewBag.image" />
