@@ -1,0 +1,13 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "List Cache Samples";
+}
+
+<form method="post" asp-action="Add" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="name" placeholder="Car Name"/>
+    <button type="submit">Save</button>
+</form>
+<br>
+@foreach (var item in Model){
+    <h1>@item <a asp-controller="ListType" asp-action="Delete" asp-route-name="@item">delete</a></h1>
+}

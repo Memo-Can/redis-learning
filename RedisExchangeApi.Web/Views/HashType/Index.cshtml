@@ -1,0 +1,14 @@
+﻿@model Dictionary<string,string>
+@{
+    ViewData["Title"] = "Hash Type Samples";
+}
+
+<form method="post" asp-action="Add" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="name" placeholder="Name"/>
+    <input type="text" name="value" placeholder="Value"/> 
+    <button type="submit">Save</button>
+</form>
+<br>
+@foreach (var item in Model){
+    <h1>@item.Key => @item.Value <a asp-action="Delete" asp-route-name="@item.Key">delete</a></h1>
+}

@@ -1,0 +1,13 @@
+﻿@model HashSet<string>
+@{
+    ViewData["Title"] = "Set Type Samples";
+}
+
+<form method="post" asp-action="Add" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="name" placeholder="Name"/>
+    <button type="submit">Save</button>
+</form>
+<br>
+@foreach (var item in Model){
+    <h1>@item <a asp-action="Delete" asp-route-name="@item">delete</a></h1>
+}
